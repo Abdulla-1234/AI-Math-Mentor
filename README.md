@@ -129,13 +129,6 @@ Navigate to **http://localhost:8501** in your browser.
 
 ---
 
-## 🔗 Deliverables
-
-| Resource | Link |
-|----------|------|
-| 🌐 Live Application | [Insert Streamlit Cloud URL here] |
-| 🎥 Demo Video | [Insert YouTube / Drive link here] |
-
 ---
 
 ## 📄 License
