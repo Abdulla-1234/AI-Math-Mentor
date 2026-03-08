@@ -1,0 +1,8 @@
+Topic: Quadratic Equations
+The standard form of a quadratic equation is ax^2 + bx + c = 0.
+The quadratic formula to find the roots is x = (-b ± √(b^2 - 4ac)) / (2a).
+Constraint: The discriminant (b^2 - 4ac) must be >= 0 for real roots.
+
+Topic: Probability
+The probability of an event A is P(A) = (Number of favorable outcomes) / (Total number of possible outcomes).
+The sum of all probabilities in a sample space is always 1.
