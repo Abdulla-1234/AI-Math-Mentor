@@ -128,9 +128,10 @@ streamlit run app.py
 Navigate to **http://localhost:8501** in your browser.
 
 ---
+## Contact
 
+- **Developer**: D Mohammad Abdulla
+- **Email**: mohammadabdulla20march@gmail.com
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/mohammad-abdulla-doodakula-8a3307258/)
+- **GitHub**: [Your GitHub Profile](https://github.com/Abdulla-1234)
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License.
