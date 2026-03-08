@@ -16,36 +16,17 @@ An end-to-end AI application designed to reliably solve JEE-style math problems,
 
 ## 🏗️ System Architecture
 
-```mermaid
-graph TD
-    A[User Input] --> B{Input Type}
-    B -->|Text| C[Text Processor]
-    B -->|Image| D[Tesseract OCR]
-    B -->|Audio| E[Whisper ASR]
-
-    C --> F[🕵️ Parser Agent]
-    D --> F
-    E --> F
-
-    F -->|Ambiguous?| G[🛑 HITL: Edit Input]
-    G --> F
-
-    F -->|Parsed JSON| H[🔀 Intent Router Agent]
-    H --> I[⚙️ Solver Agent]
-
-    J[(FAISS: Knowledge Base)] -->|RAG Context| I
-    K[(FAISS: Memory Store)] -->|Past Patterns| I
-
-    I -->|Raw Solution| L[✅ Verifier Agent]
-    L -->|Unsure / Error?| M[🛑 HITL: Human Review]
-    M --> N[💾 Save to Memory]
-
-    L -->|Verified| O[🎓 Explainer Agent]
-    O --> P[Streamlit UI]
-
-    P --> Q{User Feedback}
-    Q -->|Correct| N
-    Q -->|Incorrect| M
+```
+User Input (Text / Image / Audio)
+        ↓
+  [OCR / ASR / Text] → 🕵️ Parser → 🔀 Router
+                                         ↓
+                          ⚙️ Solver Agent
+                         ↑ RAG (FAISS KB)  ↑ Memory (FAISS)
+                                         ↓
+                         ✅ Verifier → 🎓 Explainer → UI
+                              ↓ (error)
+                         🛑 HITL Review → 💾 Save to Memory
 ```
 
 ---
