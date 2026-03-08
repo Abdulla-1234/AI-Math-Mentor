@@ -16,17 +16,21 @@ An end-to-end AI application designed to reliably solve JEE-style math problems,
 
 ## 🏗️ System Architecture
 
-```
-User Input (Text / Image / Audio)
-        ↓
-  [OCR / ASR / Text] → 🕵️ Parser → 🔀 Router
-                                         ↓
-                          ⚙️ Solver Agent
-                         ↑ RAG (FAISS KB)  ↑ Memory (FAISS)
-                                         ↓
-                         ✅ Verifier → 🎓 Explainer → UI
-                              ↓ (error)
-                         🛑 HITL Review → 💾 Save to Memory
+```mermaid
+graph LR
+    A([📥 Input]) --> B[OCR/ASR/Text]
+    B --> C[🕵️ Parser]
+    C -->|ambiguous| H[🛑 HITL]
+    C --> D[🔀 Router]
+    D --> E[⚙️ Solver]
+    F[(📚 RAG KB)] --> E
+    G[(🧠 Memory)] --> E
+    E --> I[✅ Verifier]
+    I -->|error| J[🛑 HITL Review]
+    J --> G
+    I --> K[🎓 Explainer]
+    K --> L([🖥️ UI])
+    L -->|feedback| G
 ```
 
 ---
