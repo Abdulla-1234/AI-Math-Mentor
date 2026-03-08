@@ -1,9 +1,12 @@
 streamlit
 langchain
-langchain-openai
-langgraph
-pytesseract
-Pillow
-openai
+langchain-groq
+langchain-community
+langchain-huggingface
+sentence-transformers
 faiss-cpu
 python-dotenv
+pydantic
+Pillow
+pytesseract
+groq
